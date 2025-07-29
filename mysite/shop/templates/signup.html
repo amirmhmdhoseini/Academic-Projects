@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">Sign Up</h1>
+            <p class="lead fw-normal text-white-50 mb-0">Create a new account</p>
+        </div>
+    </div>
+</header>
+<br><br>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-10 text-center">
+            <form method="POST" action="{% url 'signup' %}">
+                {% csrf_token %}
+                    {{ form.as_p }}
+                    <br><br>
+                <button type="submit" class="btn btn-secondary">Submit</button>
+              </form>
+            </div>
+    </div>
+</div>
+<br><br>
+
+{% endblock %}
